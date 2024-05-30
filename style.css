@@ -14,4 +14,37 @@
     height: 100vh;
     background: black;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background_container{
+    width: 30rem;
+    height: 20rem;
+    border: .1rem solid white;
+    /* padding: 10rem; */
+    padding: 3rem;
+}
+
+.colors{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.colors input{
+    width: 10rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+input[type="color"]{
+    -webkit-appearance: none;
+    background-color: transparent;
+}
+
+input[type="color"]::-webkit-color-swatch{
+    border:none ;
+    border-radius: 20px;
 }
