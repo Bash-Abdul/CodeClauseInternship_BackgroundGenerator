@@ -1,4 +1,5 @@
 let container = document.querySelector(".container");
+let classes = 'class="rotate-icon"'
 
 container.innerHTML = `
 
@@ -26,19 +27,19 @@ container.innerHTML = `
           <button onclick="setDirection('to right', this)">
           <i class='bx bx-right-arrow-alt'></i>
           </button>
-          <button class="rotate-icon" onclick="setDirection('to top right', this)">
+          <button ${classes} onclick="setDirection('to top right', this)">
           <i class='bx bx-up-arrow-alt'></i>
           </button>
 
-          <button class="rotate-icon" onclick="setDirection('to bottom left', this)">
+          <button ${classes} onclick="setDirection('to bottom left', this)">
           <i class='bx bx-down-arrow-alt'></i>
           </button>
 
-          <button class="rotate-icon" onclick="setDirection('to top left', this)">
+          <button ${classes} onclick="setDirection('to top left', this)">
           <i class='bx bx-left-arrow-alt'></i>
           </button>
 
-          <button class="rotate-icon" onclick="setDirection('to bottom right', this)">
+          <button ${classes} onclick="setDirection('to bottom right', this)">
           <i class='bx bx-right-arrow-alt'></i>
           </button>
         </div>
@@ -67,7 +68,7 @@ function setDirection(value, _this){
   let directions = document.querySelectorAll(".buttons button");
   for(let i of directions){
     i.classList.remove('active');
-    alert.style.display = 'None';
+    alert.style.opacity = "0";
   }
 
   _this.classList.add('active');
@@ -83,9 +84,16 @@ generateBtn.addEventListener('click', ()=>{
 copyBtn.addEventListener('click', ()=>{
   outputCode.select();
   document.execCommand('copy');
-  alert.innerHTML = `<p> Gradient Background Copied! <span><i class='bx bxs-check-circle check'></i></span </p>`;
+  
 
-  alert.style.display = 'Block';
+  if(outputCode.value === ''){
+    alert.innerHTML = `<p> EMPTY FIELD! <span><i class='bx bxs-x-circle red'></i></span> </p>`
+    alert.style.opacity = "1";
+  }
+  else{
+    alert.innerHTML = `<p> Gradient Background Copied! <span><i class='bx bxs-check-circle check'></i></span </p>`;
+    alert.style.opacity = "1";
+  }
 })
 
 

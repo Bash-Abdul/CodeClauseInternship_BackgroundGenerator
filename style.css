@@ -28,6 +28,7 @@
     box-shadow: 0 20px 25px rgba(0,0,0,.3);
     /* padding: 10rem; */
     padding: 3rem;
+    border-radius: 2rem;
 }
 
 .colors{
@@ -129,7 +130,9 @@ textarea{
     padding: 1rem;
     background: #f0f2fc;
     box-shadow: 0 15px 20px rgba(0,0,0,.4);
-    display: none;
+    /* display: none; */
+    opacity: 0;
+    
 }
 
 .alert p{
@@ -140,5 +143,9 @@ textarea{
 
 .check{
     color: green;
+}
+
+.red{
+    color: red;
 }
 
